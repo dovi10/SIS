@@ -255,8 +255,8 @@
     <string name="alert_dialog_turn_on_bt">This application needs the Bluetooth. Do you want turn on?</string>
     <string name="alert_dialog_warning_title">Warning</string>
     <string name="alert_dialog_yes">Yes</string>
-    <string name="app_name">BlueTerm</string>
-    <string name="app_version">1.1.1</string>
+    <string name="app_name">Smart Irrigation System</string>
+    <string name="app_version">0.0.1</string>
     <string name="button_scan">Scan for devices</string>
     <string name="connect">Connect device</string>
     <string name="default_screenorientation_preference">0</string>

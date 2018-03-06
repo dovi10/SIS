@@ -1,8 +1,8 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:2:1-44:12
+ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:2:1-45:12
 	package
-		ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:3:5-34
+		ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:3:5-29
 		INJECTED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml
 	android:versionName
@@ -47,22 +47,20 @@ ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\A
 	android:name
 		ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:13:22-77
 application
-ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:15:5-42:19
+ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:15:5-43:19
 MERGED from [com.android.support:appcompat-v7:20.0.0] C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\20.0.0\AndroidManifest.xml:17:5-19
 MERGED from [com.android.support:support-v4:20.0.0] C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\AndroidManifest.xml:17:5-19
 	android:label
 		ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:17:9-41
 	android:icon
-		ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:16:9-38
-activity#es.pymasde.blueterm.BlueTerm
+		ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:16:9-42
+activity#es.pymasde.SIS.BlueTerm
 ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:18:9-25:20
-	android:label
-		ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:21:13-45
 	android:configChanges
 		ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:20:13-63
 	android:name
-		ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:19:13-37
-activity#es.pymasde.blueterm.DeviceListActivity
+		ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:19:13-51
+activity#es.pymasde.SIS.DeviceListActivity
 ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:26:9-30:59
 	android:label
 		ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:29:13-50
@@ -71,22 +69,22 @@ ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\A
 	android:theme
 		ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:30:13-56
 	android:name
-		ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:27:13-47
-activity#es.pymasde.blueterm.TermPreferences
-ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:31:9-53
+		ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:27:13-61
+activity#es.pymasde.SIS.TermPreferences
+ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:31:9-67
 	android:name
-		ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:31:19-50
-activity#es.pymasde.blueterm.Login
-ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:32:9-41:20
+		ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:31:19-64
+activity#es.pymasde.SIS.Login
+ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:32:9-42:20
 	android:name
-		ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:32:19-40
+		ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:32:19-54
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:37:13-40:29
+ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:38:13-41:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:38:17-69
+ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:39:17-69
 	android:name
-		ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:38:25-66
+		ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:39:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:39:17-77
+ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:40:17-77
 	android:name
-		ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:39:27-74
+		ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:40:27-74

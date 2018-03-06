@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="es.pymasde.blueterm"
+    package="es.pymasde.SIS"
     android:versionCode="2"
     android:versionName="1.1">
 
@@ -13,24 +13,24 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-        android:icon="@drawable/icon"
+        android:icon="@drawable/sis_icon"
         android:label="@string/app_name">
         <activity
-            android:name=".BlueTerm"
+            android:name="es.pymasde.SIS.BlueTerm"
             android:configChanges="keyboardHidden|orientation"
-            android:label="@string/app_name">
+            >
 
 
 
         </activity>
         <activity
-            android:name=".DeviceListActivity"
+            android:name="es.pymasde.SIS.DeviceListActivity"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/select_device"
             android:theme="@android:style/Theme.Dialog" />
-        <activity android:name=".TermPreferences" />
-        <activity android:name=".Login"
-            android:label="Smart Irrigation System">
+        <activity android:name="es.pymasde.SIS.TermPreferences" />
+        <activity android:name="es.pymasde.SIS.Login"
+            >
             <!--
                   android:windowSoftInputMode="adjustResize|stateVisible">
                   android:launchMode="singleInstance"

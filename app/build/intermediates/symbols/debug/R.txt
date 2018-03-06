@@ -247,6 +247,7 @@ int drawable abc_textfield_searchview_right_holo_light 0x7f020056
 int drawable icon 0x7f020057
 int drawable pymasdeabout 0x7f020058
 int drawable sis_icon 0x7f020059
+int id Login_Button 0x7f0d0043
 int id ScrollView01 0x7f0d003c
 int id action_bar 0x7f0d001c
 int id action_bar_activity_content 0x7f0d0000
@@ -262,7 +263,6 @@ int id action_mode_close_button 0x7f0d0024
 int id activity_chooser_view_content 0x7f0d0025
 int id always 0x7f0d0013
 int id beginning 0x7f0d000f
-int id button 0x7f0d0043
 int id buttonDialog 0x7f0d003f
 int id button_scan 0x7f0d004a
 int id checkbox 0x7f0d002d

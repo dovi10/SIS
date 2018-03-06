@@ -15,20 +15,19 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-        android:icon="@drawable/icon"
+        android:icon="@drawable/sis_icon"
         android:label="@string/app_name" >
         <activity
-            android:name="es.pymasde.blueterm.BlueTerm"
-            android:configChanges="keyboardHidden|orientation"
-            android:label="@string/app_name" >
+            android:name="es.pymasde.SIS.BlueTerm"
+            android:configChanges="keyboardHidden|orientation" >
         </activity>
         <activity
-            android:name="es.pymasde.blueterm.DeviceListActivity"
+            android:name="es.pymasde.SIS.DeviceListActivity"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/select_device"
             android:theme="@android:style/Theme.Dialog" />
-        <activity android:name="es.pymasde.blueterm.TermPreferences" />
-        <activity android:name="es.pymasde.blueterm.Login" >
+        <activity android:name="es.pymasde.SIS.TermPreferences" />
+        <activity android:name="es.pymasde.SIS.Login" >
 
             <!--
                   android:windowSoftInputMode="adjustResize|stateVisible">
