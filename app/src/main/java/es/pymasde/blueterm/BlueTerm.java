@@ -1464,7 +1464,7 @@ class TerminalEmulator {
      * @param screen the screen to render characters into.
      * @param columns the number of columns to emulate
      * @param rows the number of rows to emulate
-     * @param termOut the output file descriptor that talks to the pseudo-tty.
+     * //@param termOut the output file descriptor that talks to the pseudo-tty.
      */
     //public TerminalEmulator(Screen screen, int columns, int rows, FileOutputStream termOut) {
     public TerminalEmulator(Screen screen, int columns, int rows) {
@@ -1565,7 +1565,7 @@ class TerminalEmulator {
      * Accept bytes (typically from the pseudo-teletype) and process them.
      *
      * @param buffer a byte array containing the bytes to be processed
-     * @param base the first index of the array to process
+     * @param base the first SIS_Icon of the array to process
      * @param length the number of bytes in the array to process
      */
     public void append(byte[] buffer, int base, int length) {
@@ -1863,7 +1863,7 @@ class TerminalEmulator {
             mTabStop[mCursorCol] = true;
             break;
 
-        case 'M': // Reverse index
+        case 'M': // Reverse SIS_Icon
             if (mCursorRow == 0) {
                 mScreen.blockCopy(0, mTopMargin + 1, mColumns, mBottomMargin
                         - (mTopMargin + 1), 0, mTopMargin);
@@ -3070,8 +3070,8 @@ class EmulatorView extends View implements GestureDetector.OnGestureListener {
     /**
      * Call this to initialize the view.
      *
-     * @param termFd the file descriptor
-     * @param termOut the output stream for the pseudo-teletype
+     * .//@param termFd the file descriptor
+     * //@param termOut the output stream for the pseudo-teletype
      */
     public void initialize(BlueTerm blueTerm) {
     	mBlueTerm = blueTerm;
@@ -3088,7 +3088,7 @@ class EmulatorView extends View implements GestureDetector.OnGestureListener {
      * them.
      *
      * @param buffer a byte array containing bytes to be processed
-     * @param base the index of the first byte in the buffer to process
+     * @param base the SIS_Icon of the first byte in the buffer to process
      * @param length the number of bytes to process
      */
     public void append(byte[] buffer, int base, int length) {
