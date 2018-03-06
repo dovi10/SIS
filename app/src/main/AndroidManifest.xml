@@ -29,7 +29,8 @@
             android:label="@string/select_device"
             android:theme="@android:style/Theme.Dialog" />
         <activity android:name=".TermPreferences" />
-        <activity android:name=".Login">
+        <activity android:name=".Login"
+            android:label="Smart Irrigation System">
             <!--
                   android:windowSoftInputMode="adjustResize|stateVisible">
                   android:launchMode="singleInstance"
