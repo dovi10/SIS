@@ -17,30 +17,27 @@
         android:icon="@drawable/sis_icon"
         android:label="@string/app_name">
         <activity
-            android:name="es.pymasde.SIS.BlueTerm"
-            android:configChanges="keyboardHidden|orientation"
-            >
-
-
-
-        </activity>
+            android:name=".BlueTerm"
+            android:configChanges="keyboardHidden|orientation"></activity>
         <activity
-            android:name="es.pymasde.SIS.DeviceListActivity"
+            android:name=".DeviceListActivity"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/select_device"
             android:theme="@android:style/Theme.Dialog" />
-        <activity android:name="es.pymasde.SIS.TermPreferences" />
-        <activity android:name="es.pymasde.SIS.Login"
-            >
+        <activity android:name=".TermPreferences" />
+        <activity android:name=".Login">
+
             <!--
                   android:windowSoftInputMode="adjustResize|stateVisible">
                   android:launchMode="singleInstance"
             -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Register" />
     </application>
 
 </manifest>

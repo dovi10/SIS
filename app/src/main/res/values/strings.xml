@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">Smart Irrigation System</string>
-    <string name="app_version">0.0.1</string>
+    <string name="app_version">0.0.3</string>
 
     <string name="alert_dialog_no_bt">Cannot use this application without bluetooth.</string>
     <string name="alert_dialog_yes">Yes</string>

@@ -1,14 +1,10 @@
 package es.pymasde.SIS;
 
-import android.app.Activity;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.view.accessibility.AccessibilityManager;
 import android.widget.Toast;
-
-import org.apache.http.HttpConnection;
-import org.apache.http.entity.InputStreamEntity;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -16,6 +12,12 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import java.lang.reflect.Type;
+import es.pymasde.SIS.user_data.User;
 
 /**
  * Created by Tomer on 07-Mar-18.
@@ -24,22 +26,30 @@ import java.net.URL;
 public class mongotasker extends AsyncTask<String, Void, String> {
 
     Context c;
-    String msg;
+    String name;
+    List<User> users = new ArrayList<User>();
     StringBuilder res = new StringBuilder();
-    public mongotasker(Context _c,String s)
+    private int Pass;
+
+    public mongotasker(Context _c,String s,int p)
     {
         this.c = _c;
-        msg = s;
+        name = s;
+        Pass = p;
     }
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-        Toast.makeText(c,msg,Toast.LENGTH_LONG).show();
+       // Toast.makeText(c,msg,Toast.LENGTH_LONG).show();
     }
 
     @Override
     protected void onPostExecute(String s) {
+        Log.d("App_Debug","+finished check+");
         super.onPostExecute(s);
+
+        
+
     }
 
     @Override
@@ -50,15 +60,16 @@ public class mongotasker extends AsyncTask<String, Void, String> {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return null;
+        return "Not Connected";
     }
     private String GetData(String Url) throws IOException{
         try{
+            Log.d("App_Debug","+Entered Checking+");
             URL url = new URL(Url);
             HttpURLConnection connection = (HttpURLConnection)url.openConnection();
-            connection.setReadTimeout(1000);
-            connection.setConnectTimeout(1000);
             connection.setRequestMethod("GET");
+            connection.setReadTimeout(3000);
+            connection.setConnectTimeout(3000);
             connection.setRequestProperty("Content-type","Application/json");
             connection.connect();
             //Read From Server
@@ -67,16 +78,40 @@ public class mongotasker extends AsyncTask<String, Void, String> {
             String line;
             while((line = br.readLine())!=null)
             {
-                res.append(line).append("\n");
+                res.append(line);
             }
+            connection.disconnect();
 
         }
         catch(Exception ex)
         {
-            Log.e("Error","+Network Error+");
+            Log.e("App_Debug","+Network Error+");
             return "";
 
         }
-        return res.toString();
+        Gson gson = new Gson();
+        Type listType = new TypeToken<List<User>>(){}.getType();
+        users=gson.fromJson(res.toString(),listType);
+        User[] it = users.toArray(new User[users.size()]);
+        boolean checked_out = false;
+        for(User u : it)
+        {
+            if(u.getName().equals(name))
+            {
+               // Toast.makeText(c,"found User",Toast.LENGTH_LONG).show();
+                if(u.getPassword() == Pass)
+                {
+                    checked_out = true;
+                }
+            }
+        }
+        if(checked_out)
+        {
+            return "Found";
+        }
+        else
+        {
+            return "Not";
+        }
     }
 }

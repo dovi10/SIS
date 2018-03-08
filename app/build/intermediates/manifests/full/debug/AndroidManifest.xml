@@ -20,8 +20,7 @@
         android:label="@string/app_name" >
         <activity
             android:name="es.pymasde.SIS.BlueTerm"
-            android:configChanges="keyboardHidden|orientation" >
-        </activity>
+            android:configChanges="keyboardHidden|orientation" />
         <activity
             android:name="es.pymasde.SIS.DeviceListActivity"
             android:configChanges="orientation|keyboardHidden"
@@ -40,6 +39,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="es.pymasde.SIS.Register" />
     </application>
 
 </manifest>

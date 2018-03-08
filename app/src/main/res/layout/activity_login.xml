@@ -6,6 +6,17 @@
     android:layout_height="fill_parent"
     >
 
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Login_Password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="14dp"
+        android:text="Login" />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
@@ -17,7 +28,7 @@
         android:layout_alignParentEnd="true" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/Login_Name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="0dp"
@@ -27,21 +38,21 @@
         android:inputType="textPersonName"
         android:text="Name"
         android:textAlignment="center"
-        android:layout_above="@+id/Login_Button"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="48dp" />
+        android:layout_below="@+id/imageView"
+        android:layout_alignStart="@+id/imageView"
+        android:layout_marginTop="49dp" />
 
     <EditText
-        android:id="@+id/Password"
+        android:id="@+id/Login_Password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:text = "Password"
+        android:text = "123456"
         android:textAlignment="center"
         android:inputType="textPassword"
-        android:layout_marginTop="136dp"
-        android:layout_below="@+id/imageView"
-        android:layout_alignStart="@+id/imageView" />
+        android:digits="0123456789"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/Login_Button"
@@ -51,17 +62,27 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="14dp"
-        android:layout_below="@+id/Password"
+        android:layout_below="@+id/Login_Password"
         android:layout_centerHorizontal="true" />
+    <Button
+        android:id="@+id/Login_Register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_below="@+id/button2"
+        android:layout_marginTop="22dp"
+        android:layout_alignStart="@+id/Login_Name" />
 
     <Button
         android:id="@+id/Check_Connection"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/Login_Button"
-        android:layout_alignStart="@+id/Login_Button"
-        android:layout_below="@+id/Login_Button"
-        android:layout_marginTop="13dp"
-        android:text="Check MongoDB Connection" />
+        android:text="Check MongoDB Connection"
+        android:layout_below="@+id/Login_Register"
+        android:layout_alignEnd="@+id/Login_Register"
+        android:layout_marginTop="24dp"
+        android:layout_alignStart="@+id/Login_Register" />
 
 </RelativeLayout>

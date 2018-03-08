@@ -123,4 +123,15 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:title="@string/keyboard_preferences">
+
+        <CheckBoxPreference
+            android:key="api_ip"
+            android:defaultValue="@string/default_value_allowinsecureconnections_preference"
+            android:title="set api ip"
+            android:summary="@string/summary_allowinsecureconnections_preference" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
