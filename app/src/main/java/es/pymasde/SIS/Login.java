@@ -68,17 +68,9 @@ public class Login extends Activity {
         Reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                try {
-                    if (Mongo_check().equals("Found")) {
+
                         Intent i = new Intent(Login.this, Register.class);
                         startActivity(i);
-                    }
-                }
-                catch(Exception ex)
-                {
-                    Toast.makeText(getApplicationContext(),"did not find the user",Toast.LENGTH_LONG).show();
-                }
-
             }
         });
     }
@@ -114,13 +106,14 @@ public class Login extends Activity {
             int p = Integer.parseInt(Pass.getText().toString());
              res = new mongotasker(getApplicationContext(),Name.getText().toString(),p)
                     .execute(API_calls.Get_Users()).get();
-            d.dismiss();
+
         }
         catch(Exception ex)
         {
             Toast.makeText(getApplicationContext(),"Password must only contain digits",Toast.LENGTH_LONG).show();
             d.dismiss();
         }
+        //d.dismiss();
         return res;
 
     }
