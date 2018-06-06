@@ -21,6 +21,9 @@ import android.view.inputmethod.ExtractedText;
 import android.view.inputmethod.ExtractedTextRequest;
 import android.view.inputmethod.InputConnection;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -657,6 +660,12 @@ class EmulatorView extends View implements GestureDetector.OnGestureListener {
             measure.setUserId(400);
             measure.setUserName("not initialized");
             measure.setTime(dateFormatted);
+            try {
+                JSONObject reading = measure.ExtractJson();
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
             append(mReceiveBuffer, 0, bytesRead);
 
             if(mRecording) {

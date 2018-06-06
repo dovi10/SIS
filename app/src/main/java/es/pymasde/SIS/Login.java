@@ -29,6 +29,8 @@ public class Login extends Activity {
     Button Check;
     Button Reg;
     TextView forgot;
+    private final String Server_url = "xxxx";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -135,8 +137,8 @@ public class Login extends Activity {
         org.json.JSONObject params = new Measurements().ExtractJson();
         String d = (String) params.get("Time");
         Elastic_API el = new Elastic_API();
-            AsyncTask<String, String, JSONObject> temp = el.execute("http://siswebap.azurewebsites.net/api/Measurments",params.toString());
-        String n = temp.get().toString();
+            AsyncTask<String, String, JSONObject> temp = el.execute(Server_url,params.toString());
+        //String n = temp.get().toString();
 
 
 
