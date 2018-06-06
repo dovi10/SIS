@@ -15,7 +15,10 @@ Runs on sdk 20(upgraded from sdk 7)
 
 ### change log:
 V0.0.5
-* check connection button connects and create unintialized measurment to elasticsearch
+* added Elasticsearch Api to code
+* added Measurements Class
+* "check connection" button connects and create unintialized measurment to elasticsearch successfully
+* changed authentication api to mlabs
  
 V0.0.3
 
