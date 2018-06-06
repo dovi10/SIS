@@ -6,14 +6,17 @@ Runs on sdk 20(upgraded from sdk 7)
 
 ## current features:
 
-
-* **interpets bluetooth signals and shows them(including arduino!)**
-* **can authenticate users from MongoDB Server**
+* **Connects to Elastic search API**
+* **interpets bluetooth signals and shows them(including arduino)**
+* can authenticate users from MongoDB Server
 * can register new users
 
 
-### change log:
 
+### change log:
+V0.0.5
+* check connection button connects and create unintialized measurment to elasticsearch
+ 
 V0.0.3
 
 * added authentication to login screen
