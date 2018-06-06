@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -662,6 +663,9 @@ class EmulatorView extends View implements GestureDetector.OnGestureListener {
             measure.setTime(dateFormatted);
             try {
                 JSONObject reading = measure.ExtractJson();
+                String val = Login.getServer_url();
+                Elastic_API api = new Elastic_API();
+                AsyncTask<String, String,JSONObject> task  = api.execute(val,reading.toString());
 
             } catch (JSONException e) {
                 e.printStackTrace();

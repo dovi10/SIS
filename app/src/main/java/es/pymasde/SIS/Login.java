@@ -29,7 +29,12 @@ public class Login extends Activity {
     Button Check;
     Button Reg;
     TextView forgot;
-    private final String Server_url = "xxxx";
+
+
+    private static final String Server_url = "http://siswebap.azurewebsites.net/api/Measurments";
+    public static String getServer_url() {
+        return Server_url;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
