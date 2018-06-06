@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp"
+        android:text="@string/forgot_text"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="71dp"
+        android:text="email:" />
+
+    <EditText
+        android:id="@+id/forgot_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="58dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:text="email" />
+
+    <EditText
+        android:id="@+id/forgot_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/forgot_email"
+        android:layout_below="@+id/forgot_email"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/forgot_name"
+        android:layout_alignBottom="@+id/forgot_name"
+        android:layout_alignStart="@+id/textView3"
+        android:text="name:" />
+
+    <TextView
+        android:id="@+id/new_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/forgot_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="98dp"
+        android:text="new password"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/generate_new_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/new_pass"
+        android:layout_alignStart="@+id/new_pass"
+        android:layout_below="@+id/new_pass"
+        android:layout_marginTop="28dp"
+        android:text="request password" />
+</RelativeLayout>

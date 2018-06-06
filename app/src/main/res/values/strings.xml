@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">Smart Irrigation System</string>
-    <string name="app_version">0.0.3</string>
+    <string name="app_version">0.0.32</string>
 
     <string name="alert_dialog_no_bt">Cannot use this application without bluetooth.</string>
     <string name="alert_dialog_yes">Yes</string>
@@ -86,7 +86,8 @@
     <string name="dialog_title_screenorientation_preference">Screen orientation</string>
 
     <string name="pymasde_es">http://pymasde.es/</string>
-
+    <string name="git">https://github.com/dovi10/SIS</string>
+    <string name="forgot_text">please enter your information below</string>
     <!-- Don't localize these default values -->
     <string name="default_value_localecho_preference">false</string>
     <string name="default_value_allowinsecureconnections_preference">true</string>
@@ -96,5 +97,4 @@
     <string name="default_value_end_of_line_0D_preference">13</string>
     <string name="default_value_end_of_line_0A_preference">10</string>
     <string name="default_screenorientation_preference">0</string>
-    <string name="git">https://github.com/dovi10/SIS</string>
 </resources>

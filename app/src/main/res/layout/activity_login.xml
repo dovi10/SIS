@@ -79,10 +79,19 @@
         android:id="@+id/Check_Connection"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Check MongoDB Connection"
-        android:layout_below="@+id/Login_Register"
         android:layout_alignEnd="@+id/Login_Register"
-        android:layout_marginTop="24dp"
-        android:layout_alignStart="@+id/Login_Register" />
+        android:layout_alignStart="@+id/Login_Register"
+        android:layout_below="@+id/Login_Register"
+        android:layout_marginTop="17dp"
+        android:text="Check ElasticSearch" />
+
+    <TextView
+        android:id="@+id/ForgotPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/Check_Connection"
+        android:layout_marginBottom="13dp"
+        android:text="forgot password?" />
 
 </RelativeLayout>

@@ -5,13 +5,19 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONObject;
+
+import java.util.GregorianCalendar;
+import java.util.TimeZone;
 import java.util.concurrent.ExecutionException;
 
 public class Login extends Activity {
@@ -19,21 +25,20 @@ public class Login extends Activity {
     Button Login;
     Button Check;
     Button Reg;
+    TextView forgot;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         Login = (Button)findViewById(R.id.Login_Button);
         Check = (Button)findViewById(R.id.Check_Connection);
+        forgot = (TextView)findViewById(R.id.ForgotPassword);
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Dialog d = new Dialog(Login.this);
-                d.setContentView(R.layout.progress);
-                d.show();
                 try {
-                    if(Mongo_check().equals("Found")) {
-                        d.dismiss();
+                    if(Mongo_check_user().equals("Found")) {
+
                         Intent i = new Intent(Login.this, BlueTerm.class);
                         startActivity(i);
 
@@ -47,7 +52,6 @@ public class Login extends Activity {
                 {
                     Log.e("Error","+could not start check+");
                 }
-                d.dismiss();
 
 
             }
@@ -56,7 +60,7 @@ public class Login extends Activity {
             @Override
             public void onClick(View view) {
                 try {
-                    Mongo_check();
+                    Check_Elastic();
                 }
                 catch(Exception ex)
                 {
@@ -73,6 +77,13 @@ public class Login extends Activity {
                         startActivity(i);
             }
         });
+        forgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Login.this,forgotPass.class);
+                startActivity(i);
+            }
+        });
     }
     public void Dialog_Mongo() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -83,7 +94,7 @@ public class Login extends Activity {
                 .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         try {
-                            Mongo_check();
+                            Mongo_check_user();
                         } catch (ExecutionException e) {
                             e.printStackTrace();
                         } catch (InterruptedException e) {
@@ -95,7 +106,7 @@ public class Login extends Activity {
         alert.show();
     }
 
-    private String Mongo_check() throws ExecutionException, InterruptedException {
+    private String Mongo_check_user() throws ExecutionException, InterruptedException {
         EditText Name = (EditText)findViewById(R.id.Login_Name);
         EditText Pass = (EditText)findViewById(R.id.Login_Password);
         String res = "Not";
@@ -105,7 +116,7 @@ public class Login extends Activity {
         try{
             int p = Integer.parseInt(Pass.getText().toString());
              res = new mongotasker(getApplicationContext(),Name.getText().toString(),p)
-                    .execute(API_calls.Get_Users()).get();
+                    .execute(Mongo_Auth.Get_Users()).get();
 
         }
         catch(Exception ex)
@@ -113,8 +124,20 @@ public class Login extends Activity {
             Toast.makeText(getApplicationContext(),"Password must only contain digits",Toast.LENGTH_LONG).show();
             d.dismiss();
         }
-        //d.dismiss();
+            d.dismiss();
         return res;
 
     }
+    private void Check_Elastic() throws org.json.JSONException, ExecutionException, InterruptedException {
+        org.json.JSONObject params = new org.json.JSONObject();
+        params.put("Time", GregorianCalendar.getInstance(TimeZone.getDefault()).getTime());
+        params.put("UserId", 400);
+        Elastic_API el = new Elastic_API();
+            AsyncTask<String, String, JSONObject> temp = el.execute("http://siswebap.azurewebsites.net/api/Measurments",params.toString());
+        String n = temp.get().toString();
+        String d;
+
+
+    }
+
 }

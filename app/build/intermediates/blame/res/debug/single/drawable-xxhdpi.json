@@ -4,12 +4,12 @@
         "source": "C:\\Users\\Tomer\\AndroidStudioProjects\\sis_final_project\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\20.0.0\\res\\drawable-xxhdpi\\abc_tab_selected_pressed_holo.9.png"
     },
     {
-        "merged": "C:\\Users\\Tomer\\AndroidStudioProjects\\sis_final_project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\abc_ab_solid_light_holo.9.png",
-        "source": "C:\\Users\\Tomer\\AndroidStudioProjects\\sis_final_project\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\20.0.0\\res\\drawable-xxhdpi\\abc_ab_solid_light_holo.9.png"
-    },
-    {
         "merged": "C:\\Users\\Tomer\\AndroidStudioProjects\\sis_final_project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\abc_ab_stacked_solid_light_holo.9.png",
         "source": "C:\\Users\\Tomer\\AndroidStudioProjects\\sis_final_project\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\20.0.0\\res\\drawable-xxhdpi\\abc_ab_stacked_solid_light_holo.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Tomer\\AndroidStudioProjects\\sis_final_project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\abc_ab_solid_light_holo.9.png",
+        "source": "C:\\Users\\Tomer\\AndroidStudioProjects\\sis_final_project\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\20.0.0\\res\\drawable-xxhdpi\\abc_ab_solid_light_holo.9.png"
     },
     {
         "merged": "C:\\Users\\Tomer\\AndroidStudioProjects\\sis_final_project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\abc_cab_background_top_holo_dark.9.png",

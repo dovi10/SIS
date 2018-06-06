@@ -2,5 +2,9 @@
     {
         "merged": "C:\\Users\\Tomer\\AndroidStudioProjects\\sis_final_project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\sis_icon.jpg",
         "source": "C:\\Users\\Tomer\\AndroidStudioProjects\\sis_final_project\\app\\src\\main\\res\\drawable-hdpi\\sis_icon.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Tomer\\AndroidStudioProjects\\sis_final_project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\sis_icon2.jpg",
+        "source": "C:\\Users\\Tomer\\AndroidStudioProjects\\sis_final_project\\app\\src\\main\\res\\drawable-hdpi\\sis_icon2.jpg"
     }
 ]

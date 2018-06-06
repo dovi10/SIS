@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:2:1-43:12
+ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:2:1-44:12
 	package
 		ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:3:5-29
 		INJECTED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml
@@ -51,7 +51,7 @@ ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\A
 	android:name
 		ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:14:22-64
 application
-ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:16:5-41:19
+ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:16:5-42:19
 MERGED from [com.android.support:appcompat-v7:20.0.0] C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\20.0.0\AndroidManifest.xml:17:5-19
 MERGED from [com.android.support:support-v4:20.0.0] C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\AndroidManifest.xml:17:5-19
 	android:label
@@ -96,3 +96,7 @@ activity#es.pymasde.SIS.Register
 ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:40:9-46
 	android:name
 		ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:40:19-43
+activity#es.pymasde.SIS.forgotPass
+ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:41:9-48
+	android:name
+		ADDED from C:\Users\Tomer\AndroidStudioProjects\sis_final_project\app\src\main\AndroidManifest.xml:41:19-45

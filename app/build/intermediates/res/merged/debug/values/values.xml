@@ -256,7 +256,7 @@
     <string name="alert_dialog_warning_title">Warning</string>
     <string name="alert_dialog_yes">Yes</string>
     <string name="app_name">Smart Irrigation System</string>
-    <string name="app_version">0.0.1</string>
+    <string name="app_version">0.0.32</string>
     <string name="button_scan">Scan for devices</string>
     <string name="connect">Connect device</string>
     <string name="default_screenorientation_preference">0</string>
@@ -276,6 +276,7 @@
     <string name="dialog_title_outgoing_end_of_line_0D_preference">Outgoing CR (0x0D) character</string>
     <string name="dialog_title_screenorientation_preference">Screen orientation</string>
     <string name="disconnect">Disconnect device</string>
+    <string name="forgot_text">please enter your information below</string>
     <string name="general_preferences">General</string>
     <string name="git">https://github.com/dovi10/SIS</string>
     <string name="incoming_end_of_line">Incoming End of Line</string>

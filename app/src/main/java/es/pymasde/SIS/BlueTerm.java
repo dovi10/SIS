@@ -52,6 +52,9 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.widget.Toast;
 
+import org.apache.http.HttpHost;
+
+
 
 public class BlueTerm extends Activity {
     // Intent request codes
