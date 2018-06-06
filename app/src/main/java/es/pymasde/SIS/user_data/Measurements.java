@@ -3,6 +3,10 @@ package es.pymasde.SIS.user_data;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.ParseException;
+import java.text.ParsePosition;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
 
@@ -29,10 +33,14 @@ public class Measurements {
         BuzzerVal = buzzerVal;
     }
 
-    public Measurements() {
+    public Measurements() throws ParseException {
        this.UserId = 400;
        this.UserName = "wasnt Initialized";
-       this.Time = GregorianCalendar.getInstance(TimeZone.getDefault()).getTime().toString();
+       Calendar calendar = GregorianCalendar.getInstance(TimeZone.getDefault());
+        SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
+        fmt.setCalendar(calendar);
+        String dateFormatted = fmt.format(calendar.getTime());
+       this.Time = dateFormatted;
        this.Humidityval = 0;
        this.HumidityPer = 0;
        this.IdrVal = 0;

@@ -16,9 +16,12 @@ import android.widget.Toast;
 
 import org.json.JSONObject;
 
+import java.text.ParseException;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
 import java.util.concurrent.ExecutionException;
+
+import es.pymasde.SIS.user_data.Measurements;
 
 public class Login extends Activity {
 
@@ -128,14 +131,13 @@ public class Login extends Activity {
         return res;
 
     }
-    private void Check_Elastic() throws org.json.JSONException, ExecutionException, InterruptedException {
-        org.json.JSONObject params = new org.json.JSONObject();
-        params.put("Time", GregorianCalendar.getInstance(TimeZone.getDefault()).getTime());
-        params.put("UserId", 400);
+    private void Check_Elastic() throws org.json.JSONException, ExecutionException, InterruptedException, ParseException {
+        org.json.JSONObject params = new Measurements().ExtractJson();
+        String d = (String) params.get("Time");
         Elastic_API el = new Elastic_API();
             AsyncTask<String, String, JSONObject> temp = el.execute("http://siswebap.azurewebsites.net/api/Measurments",params.toString());
         String n = temp.get().toString();
-        String d;
+
 
 
     }
