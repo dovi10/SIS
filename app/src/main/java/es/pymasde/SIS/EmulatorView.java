@@ -25,7 +25,14 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.TimeZone;
+
+import es.pymasde.SIS.user_data.Measurements;
 
 /**
  * A view on a transcript and a terminal emulator. Displays the text of the
@@ -642,6 +649,14 @@ class EmulatorView extends View implements GestureDetector.OnGestureListener {
         try {
             int bytesRead = mByteQueue.read(mReceiveBuffer, 0, bytesToRead);
             String stringRead = new String(mReceiveBuffer, 0, bytesRead);
+            Calendar calendar = GregorianCalendar.getInstance(TimeZone.getDefault());
+            SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
+            fmt.setCalendar(calendar);
+            String dateFormatted = fmt.format(calendar.getTime());
+            Measurements measure = new Measurements(0,0,0,0,0);
+            measure.setUserId(400);
+            measure.setUserName("not initialized");
+            measure.setTime(dateFormatted);
             append(mReceiveBuffer, 0, bytesRead);
 
             if(mRecording) {

@@ -22,10 +22,7 @@ public class Measurements {
     private double WaterVal ;
     private double BuzzerVal;
 
-    public Measurements(String time, long userId, String userName, double hudimityVal, double hudimityPrecent, double idrVal, double waterVal, double buzzerVal) {
-        Time = time;
-        UserId = userId;
-        UserName = userName;
+    public Measurements(double hudimityVal, double hudimityPrecent, double idrVal, double waterVal, double buzzerVal) {
         Humidityval = hudimityVal;
         HumidityPer = hudimityPrecent;
         IdrVal = idrVal;
@@ -33,7 +30,7 @@ public class Measurements {
         BuzzerVal = buzzerVal;
     }
 
-    public Measurements() throws ParseException {
+    public Measurements() {
        this.UserId = 400;
        this.UserName = "wasnt Initialized";
        Calendar calendar = GregorianCalendar.getInstance(TimeZone.getDefault());
