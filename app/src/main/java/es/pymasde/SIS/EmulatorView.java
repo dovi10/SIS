@@ -679,7 +679,7 @@ class EmulatorView extends View implements GestureDetector.OnGestureListener {
         String dateFormatted = fmt.format(calendar.getTime());
         Measurements measure = new Measurements(0,0,0,0,0);
         measure.setUserId(400);
-        measure.setUserName("not initialized");
+        measure.setUserName(Login.getUserName());
         measure.setTime(dateFormatted);
         try {
             JSONObject reading = measure.ExtractJson();

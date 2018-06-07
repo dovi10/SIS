@@ -29,8 +29,10 @@ public class Login extends Activity {
     Button Check;
     Button Reg;
     TextView forgot;
-
-
+    private static String UserName = "not found";
+    public static String getUserName() {
+        return UserName;
+    }
     private static final String Server_url = "http://siswebap.azurewebsites.net/api/Measurments";
     public static String getServer_url() {
         return Server_url;
@@ -48,7 +50,8 @@ public class Login extends Activity {
             public void onClick(View view) {
                 try {
                     if(Mongo_check_user().equals("Found")) {
-
+                        EditText Name = (EditText)findViewById(R.id.Login_Name);
+                        UserName = Name.toString();
                         Intent i = new Intent(Login.this, BlueTerm.class);
                         startActivity(i);
 
@@ -140,7 +143,7 @@ public class Login extends Activity {
     }
     private void Check_Elastic() throws org.json.JSONException, ExecutionException, InterruptedException, ParseException {
         org.json.JSONObject params = new Measurements().ExtractJson();
-        String d = (String) params.get("Time");
+        //String d = (String) params.get("Time");
         Elastic_API el = new Elastic_API();
             AsyncTask<String, String, JSONObject> temp = el.execute(Server_url,params.toString());
         //String n = temp.get().toString();
