@@ -177,6 +177,7 @@ class EmulatorView extends View implements GestureDetector.OnGestureListener {
             }
         }
     };
+    private String FullText = "";
 
 
     public EmulatorView(Context context) {
@@ -651,31 +652,43 @@ class EmulatorView extends View implements GestureDetector.OnGestureListener {
         int bytesAvailable = mByteQueue.getBytesAvailable();
         int bytesToRead = Math.min(bytesAvailable, mReceiveBuffer.length);
         try {
+
             int bytesRead = mByteQueue.read(mReceiveBuffer, 0, bytesToRead);
             String stringRead = new String(mReceiveBuffer, 0, bytesRead);
-            Calendar calendar = GregorianCalendar.getInstance(TimeZone.getDefault());
-            SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
-            fmt.setCalendar(calendar);
-            String dateFormatted = fmt.format(calendar.getTime());
-            Measurements measure = new Measurements(0,0,0,0,0);
-            measure.setUserId(400);
-            measure.setUserName("not initialized");
-            measure.setTime(dateFormatted);
-            try {
-                JSONObject reading = measure.ExtractJson();
-                String val = Login.getServer_url();
-                Elastic_API api = new Elastic_API();
-                AsyncTask<String, String,JSONObject> task  = api.execute(val,reading.toString());
-
-            } catch (JSONException e) {
-                e.printStackTrace();
+            FullText = FullText + stringRead;
+            if(FullText.contains("$"))
+            {
+                send();
+                FullText = "";
             }
+
             append(mReceiveBuffer, 0, bytesRead);
 
             if(mRecording) {
             	this.writeLog( stringRead );
             }
         } catch (InterruptedException e) {
+        }
+    }
+
+    private void send() {
+        //just for tests not actual release code
+        Calendar calendar = GregorianCalendar.getInstance(TimeZone.getDefault());
+        SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
+        fmt.setCalendar(calendar);
+        String dateFormatted = fmt.format(calendar.getTime());
+        Measurements measure = new Measurements(0,0,0,0,0);
+        measure.setUserId(400);
+        measure.setUserName("not initialized");
+        measure.setTime(dateFormatted);
+        try {
+            JSONObject reading = measure.ExtractJson();
+            String val = Login.getServer_url();
+            Elastic_API api = new Elastic_API();
+            AsyncTask<String, String,JSONObject> task  = api.execute(val,reading.toString());
+
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
     }
 
