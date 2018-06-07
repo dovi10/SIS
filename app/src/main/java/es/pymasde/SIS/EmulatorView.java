@@ -656,7 +656,7 @@ class EmulatorView extends View implements GestureDetector.OnGestureListener {
             int bytesRead = mByteQueue.read(mReceiveBuffer, 0, bytesToRead);
             String stringRead = new String(mReceiveBuffer, 0, bytesRead);
             FullText = FullText + stringRead;
-            if(FullText.contains("$"))
+            if(FullText.contains("\n"))
             {
                 send();
                 FullText = "";
