@@ -11,6 +11,7 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
@@ -21,6 +22,7 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.ExtractedText;
 import android.view.inputmethod.ExtractedTextRequest;
 import android.view.inputmethod.InputConnection;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -681,6 +683,21 @@ class EmulatorView extends View implements GestureDetector.OnGestureListener {
         measure.setUserId(400);
         measure.setUserName(Login.getUserName());
         measure.setTime(dateFormatted);
+        try {
+            String[] readings = FullText.split(",");
+            measure.setHudimityVal(Integer.parseInt(readings[0]));
+            measure.setHumidityPer(Integer.parseInt(readings[1]));
+            measure.setIdrVal(Integer.parseInt(readings[2]));
+            measure.setWaterVal(Integer.parseInt(readings[3]));
+            measure.setBuzzerVal(Integer.parseInt(readings[4].substring(0,1)));
+        }
+        catch(Exception ex)
+        {
+            Log.e("Values format","values string was not correctly entered\n"+ex.toString());
+            Toast.makeText(getContext(),"Error occured with values extraction from text",Toast.LENGTH_LONG);
+
+        }
+
         try {
             JSONObject reading = measure.ExtractJson();
             String val = Login.getServer_url();

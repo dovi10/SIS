@@ -18,6 +18,7 @@ import org.json.JSONObject;
 
 import java.text.ParseException;
 import java.util.GregorianCalendar;
+import java.util.HashMap;
 import java.util.TimeZone;
 import java.util.concurrent.ExecutionException;
 
@@ -30,8 +31,18 @@ public class Login extends Activity {
     Button Reg;
     TextView forgot;
     private static String UserName = "not found";
+
+    private static long UserID;
     public static String getUserName() {
         return UserName;
+    }
+
+    public static long getUserID() {
+        return UserID;
+    }
+
+    public static void setUserID(long userID) {
+        UserID = userID;
     }
     private static final String Server_url = "http://siswebap.azurewebsites.net/api/Measurments";
     public static String getServer_url() {
@@ -49,16 +60,18 @@ public class Login extends Activity {
             @Override
             public void onClick(View view) {
                 try {
-                    if(Mongo_check_user().equals("Found")) {
-                        EditText Name = (EditText)findViewById(R.id.Login_Name);
-                        UserName = Name.toString();
-                        Intent i = new Intent(Login.this, BlueTerm.class);
-                        startActivity(i);
+                    if(!searchLocally()) {
 
-                    }
-                    else
-                    {
-                        Toast.makeText(getApplicationContext(),"could not find the user",Toast.LENGTH_LONG).show();
+
+                        if (Mongo_check_user().equals("Found")) {
+                            EditText Name = (EditText) findViewById(R.id.Login_Name);
+                            UserName = Name.getText().toString();
+                            Intent i = new Intent(Login.this, BlueTerm.class);
+                            startActivity(i);
+
+                        } else {
+                            Toast.makeText(getApplicationContext(), "could not find the user", Toast.LENGTH_LONG).show();
+                        }
                     }
                 }
                 catch(Exception ex)
@@ -98,6 +111,26 @@ public class Login extends Activity {
             }
         });
     }
+
+    private boolean searchLocally() {
+        HashMap<String,Long> Locals = new HashMap<String, Long>();
+        Locals.put("Dovi",Long.parseLong(""));
+        Locals.put("Tomer",Long.parseLong(""));
+        Locals.put("Yossi",Long.parseLong(""));
+        Locals.put("Naftali",Long.parseLong(""));
+        EditText Name = (EditText)findViewById(R.id.Login_Name);
+        for(String s : Locals.keySet())
+        {
+
+            if(Name.getText().toString().equals(s))
+            {
+                setUserID(Locals.get(s));
+                UserName = Name.getText().toString();
+            }
+        }
+        return false;
+    }
+
     public void Dialog_Mongo() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Click ok to start testing")
@@ -142,11 +175,30 @@ public class Login extends Activity {
 
     }
     private void Check_Elastic() throws org.json.JSONException, ExecutionException, InterruptedException, ParseException {
-        org.json.JSONObject params = new Measurements().ExtractJson();
-        //String d = (String) params.get("Time");
-        Elastic_API el = new Elastic_API();
+        Measurements measure = new Measurements();
+        try {
+            String FullText = "1,2,3,4,5\n";
+            String[] readings = FullText.split(",");
+            measure.setHudimityVal(Integer.parseInt(readings[0]));
+            measure.setHumidityPer(Integer.parseInt(readings[1]));
+            measure.setIdrVal(Integer.parseInt(readings[2]));
+            measure.setWaterVal(Integer.parseInt(readings[3]));
+            measure.setBuzzerVal(Integer.parseInt(readings[4].substring(0,1)));
+            measure.setUserId(400);
+            measure.setUserName(getUserName());
+            org.json.JSONObject params = measure.ExtractJson();
+            //String d = (String) params.get("Time");
+            Elastic_API el = new Elastic_API();
             AsyncTask<String, String, JSONObject> temp = el.execute(Server_url,params.toString());
-        //String n = temp.get().toString();
+            //String n = temp.get().toString();
+        }
+        catch(Exception ex)
+        {
+            Log.e("Values format","values string was not correctly entered\n"+ex.toString());
+            Toast.makeText(Login.this,"Error occured with values extraction from text",Toast.LENGTH_LONG);
+
+        }
+
 
 
 

@@ -441,12 +441,12 @@ public class BlueTerm extends Activity {
                 	
                 	mInputManager.showSoftInput(mEmulatorView, InputMethodManager.SHOW_IMPLICIT);
                 	
-                    mTitle.setText( R.string.title_connected_to );
-                    mTitle.append(" " + mConnectedDeviceName);
+                    //mTitle.setText( R.string.title_connected_to );
+                    //mTitle.append(" " + mConnectedDeviceName);
                     break;
                     
                 case BluetoothSerialService.STATE_CONNECTING:
-                    mTitle.setText(R.string.title_connecting);
+                   // mTitle.setText(R.string.title_connecting);
                     break;
                     
                 case BluetoothSerialService.STATE_LISTEN:
