@@ -680,7 +680,7 @@ class EmulatorView extends View implements GestureDetector.OnGestureListener {
         fmt.setCalendar(calendar);
         String dateFormatted = fmt.format(calendar.getTime());
         Measurements measure = new Measurements(0,0,0,0,0);
-        measure.setUserId(400);
+        measure.setUserId(Login.getUserID());
         measure.setUserName(Login.getUserName());
         measure.setTime(dateFormatted);
         try {

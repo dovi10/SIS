@@ -114,10 +114,10 @@ public class Login extends Activity {
 
     private boolean searchLocally() {
         HashMap<String,Long> Locals = new HashMap<String, Long>();
-        Locals.put("Dovi",Long.parseLong(""));
-        Locals.put("Tomer",Long.parseLong(""));
-        Locals.put("Yossi",Long.parseLong(""));
-        Locals.put("Naftali",Long.parseLong(""));
+        Locals.put("Dovi",Long.parseLong("9781527865"));
+        Locals.put("Tomer",Long.parseLong("2203871935"));
+        Locals.put("Yossi",Long.parseLong("5039103367"));
+        Locals.put("Naftali",Long.parseLong("8229019706"));
         EditText Name = (EditText)findViewById(R.id.Login_Name);
         for(String s : Locals.keySet())
         {
