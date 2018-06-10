@@ -56,6 +56,7 @@ public class Login extends Activity {
         Login = (Button)findViewById(R.id.Login_Button);
         Check = (Button)findViewById(R.id.Check_Connection);
         forgot = (TextView)findViewById(R.id.ForgotPassword);
+        setUserID(400);
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,6 +73,11 @@ public class Login extends Activity {
                         } else {
                             Toast.makeText(getApplicationContext(), "could not find the user", Toast.LENGTH_LONG).show();
                         }
+                    }
+                    else
+                    {
+                        Intent i = new Intent(Login.this, BlueTerm.class);
+                        startActivity(i);
                     }
                 }
                 catch(Exception ex)
@@ -126,6 +132,7 @@ public class Login extends Activity {
             {
                 setUserID(Locals.get(s));
                 UserName = Name.getText().toString();
+                return true;
             }
         }
         return false;
@@ -184,7 +191,7 @@ public class Login extends Activity {
             measure.setIdrVal(Integer.parseInt(readings[2]));
             measure.setWaterVal(Integer.parseInt(readings[3]));
             measure.setBuzzerVal(Integer.parseInt(readings[4].substring(0,1)));
-            measure.setUserId(400);
+            measure.setUserId(getUserID());
             measure.setUserName(getUserName());
             org.json.JSONObject params = measure.ExtractJson();
             //String d = (String) params.get("Time");
